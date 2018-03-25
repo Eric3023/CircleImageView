@@ -178,9 +178,9 @@ public class CircleImageView extends View {
         int viewWidth = getWidth();
         int viewHeight = getHeight();
 
-        radius = viewWidth > viewHeight ? viewHeight : viewWidth;
+        radius = viewWidth > viewHeight ? viewHeight/2 : viewWidth/2;
 
-        Bitmap bmp = createCircleImage(radius, radius);
+        Bitmap bmp = createCircleImage(radius*2, radius*2);
         canvas.drawBitmap(bmp, 0, 0, null);
     }
 

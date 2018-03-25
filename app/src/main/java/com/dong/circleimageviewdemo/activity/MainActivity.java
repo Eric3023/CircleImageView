@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dong.circleimageview.widget.CircleImageView;
+import com.dong.circleimageview.widget.PhotoPickerImageView;
 import com.dong.circleimageviewdemo.R;
 import com.dong.circleimageviewdemo.model.UrlConfige;
 
@@ -20,9 +21,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnCircleImageView = findViewById(R.id.btnCircleImageView);
         Button btnRoundImageView = findViewById(R.id.btnRoundImageView);
+        Button btnPhotoPickerImageView = findViewById(R.id.btnPhotoPickerImageView);
+
 
         btnCircleImageView.setOnClickListener(this);
         btnRoundImageView.setOnClickListener(this);
+        btnPhotoPickerImageView.setOnClickListener(this);
     }
 
     @Override
@@ -34,7 +38,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.btnRoundImageView:
-                Intent intent =new Intent(this, RoundImageViewActivity.class);
+                Intent it =new Intent(this, RoundImageViewActivity.class);
+                startActivity(it);
+                break;
+            case R.id.btnPhotoPickerImageView:
+                Intent intent =new Intent(this, PhotoPickerActivity.class);
                 startActivity(intent);
                 break;
         }

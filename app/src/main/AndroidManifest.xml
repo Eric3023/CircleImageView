@@ -3,6 +3,8 @@
     package="com.dong.circleimageviewdemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.CircleImageViewActivity" />
-        <activity android:name=".activity.RoundImageViewActivity"></activity>
+        <activity android:name=".activity.RoundImageViewActivity" />
+        <activity android:name=".activity.PhotoPickerActivity"></activity>
     </application>
 
 </manifest>
