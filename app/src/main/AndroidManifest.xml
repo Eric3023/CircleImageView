@@ -22,7 +22,8 @@
         </activity>
         <activity android:name=".activity.CircleImageViewActivity" />
         <activity android:name=".activity.RoundImageViewActivity" />
-        <activity android:name=".activity.PhotoPickerActivity"></activity>
+        <activity android:name=".activity.PhotoPickerActivity" />
+        <activity android:name=".activity.PhotoSelectActivity"></activity>
     </application>
 
 </manifest>

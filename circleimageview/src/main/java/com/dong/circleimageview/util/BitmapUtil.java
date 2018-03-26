@@ -15,8 +15,8 @@ import java.util.UUID;
 
 public class BitmapUtil {
 
-    private static final String SD_PATH = "/sdcard/picture/";
-    private static final String IN_PATH = "/picture/";
+    private static final String SD_PATH = "/sdcard/PhotoPicker/";
+    private static final String IN_PATH = "/PhotoPicker/";
 
     /**
      * 随机生产文件名

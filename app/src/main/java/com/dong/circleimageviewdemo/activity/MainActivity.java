@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(it);
                 break;
             case R.id.btnPhotoPickerImageView:
-                Intent intent =new Intent(this, PhotoPickerActivity.class);
+                Intent intent =new Intent(this, PhotoSelectActivity.class);
                 startActivity(intent);
                 break;
         }

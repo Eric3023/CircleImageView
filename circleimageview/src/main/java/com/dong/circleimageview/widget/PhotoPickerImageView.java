@@ -128,13 +128,18 @@ public class PhotoPickerImageView extends View {
         return this;
     }
 
+    public PhotoPickerImageView setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+        return this;
+    }
+
     public PhotoPickerImageView reset() {
         matrix = null;
         invalidate();
         return this;
     }
 
-    public PhotoPickerImageView saveBitmap(){
+    public Bitmap saveBitmap(boolean isSave){
         Bitmap bitmap = Bitmap.createBitmap(radius * 2, radius * 2, Bitmap.Config.ARGB_8888);
         Canvas canvasMask = new Canvas(bitmap);
         Paint paint = new Paint();
@@ -146,10 +151,12 @@ public class PhotoPickerImageView extends View {
             canvasMask.drawBitmap(this.bitmap, matrix, paint);
         }
 
-        String savePath = BitmapUtil.saveBitmap(context, bitmap);
-        Log.i("Dong","path:"+savePath);
+        if(isSave){
+            String savePath = BitmapUtil.saveBitmap(context, bitmap);
+            Log.i("Dong", "头像保存路径："+savePath);
+        }
 
-        return this;
+        return bitmap;
     }
 
     @Override
