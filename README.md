@@ -82,77 +82,49 @@ java代码中设置控件的属性
  ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/3.png)
  
 
-#### 2.3 GalleryViewPager
+#### 2.3 PhotoPickerImageView
 
 布局文件
 
 ```xml
-<com.dong.pointviewpager.widget.GalleryViewPager
-    android:id="@+id/galleryviewpager"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/y120"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent">
-</com.dong.pointviewpager.widget.GalleryViewPager>
+    <com.dong.circleimageview.widget.PhotoPickerImageView
+        android:id="@+id/photopickerimageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 ```
 代码文件
 ```java
-GalleryViewPager galleryViewPager = findViewById(R.id.galleryviewpager);
-LoopViewPager loopViewPager = galleryViewPager.getLoopViewPager();
-
-//设置Gallery中LoopViewPager的参数(方法同上2.1， LoopViewPager参数设置)
-initLoopViewPager(loopViewPager);
-//设置Gallery中其他参数
-initGalleryViewPager(galleryViewPager);
+    private void initPhotoPickerImageView(Bitmap bitmap) {
+        photoPickerImageView
+//                .setFilePath(FILE_PATH)//设置头像源图片路径（本地文件路径）
+                .setBitmap(bitmap)////设置头像源Bitmap,此处为相册选择返回的bitmap
+                .setRadius((int) getResources().getDimension(R.dimen.x100))//设置头像选择器半径/边长
+                .setMaskID(R.drawable.photo_mask_img)//设置遮罩层
+                .setShape(PhotoPickerImageView.CICLE_IMG)//设置遮罩层形状，CICLE_IMG圆形,SQUARE_IMG正方形
+                .setMaxScale(3)//设置图片最大放大倍数，默认为4
+                .setMinScale(0.6f);//设置图片最小缩小倍数，默认为0.5
+    }
 ```
 ```java
-    private void initGalleryViewPager(GalleryViewPager galleryViewPager) {
-        galleryViewPager.setPageWidth((int) getResources().getDimension(R.dimen.x280))//设置ViewPager的宽度，适当小于GalleryViewPager的宽度
-                .setPageHeight(RelativeLayout.LayoutParams.MATCH_PARENT)//设置ViewPager的高度
-                .setPageScale((float) 0.8)//设置两侧隐藏页面的缩放比例
-                .setPageAlpha((float) 0.5)//设置两侧隐藏页面的透明度
-                .initialise();
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id){
+            case R.id.reset:
+                photoPickerImageView.reset();//截取效果还原
+                break;
+            case R.id.commit:
+                Bitmap bitmap = photoPickerImageView.saveBitmap(true);//截取头像（return截取的bitmap， param1是否保存到本地）
+                break;
+        }
     }
 ```
 效果：
 
- ![image](https://github.com/Eric3023/PointViewPager/blob/master/app/screenshoot/3.gif)
+ ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/1.gif)
  
  
- #### 2.4 PointGalleryViewPager
- 布局文件
-```xml
-<com.dong.pointviewpager.widget.PointGalleryViewPager
-    android:id="@+id/pointGalleryViewPager"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/y120"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-```
-代码文件
-```java
-//设置PointGallery中LoopViewPager的参数(方法同2.1)
-initLoopViewPager(loopViewPager);
-//设置PointGallery中PoitView的参数（方法同2.2）
-initPointView(pointView);
-//设置PointGallery中其他参数
-initGalleryViewPager(pointGalleryViewPager);
-```
-```
-private void initGalleryViewPager(PointGalleryViewPager galleryViewPager) {
-   galleryViewPager.setPageWidth((int) getResources().getDimension(R.dimen.x280))//设置ViewPager的宽度，适当小于GalleryViewPager的宽度
-                .setPageHeight(RelativeLayout.LayoutParams.MATCH_PARENT)//设置ViewPager的高度
-                .setPageScale((float) 0.8)//设置两侧隐藏页面的缩放比例
-                .setPageAlpha((float) 0.5)//设置两侧隐藏页面的透明度
-                .initialise();
-    }
-```
-
-
-效果：
-
- ![image](https://github.com/Eric3023/PointViewPager/blob/master/app/screenshoot/4.gif)
