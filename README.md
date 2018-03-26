@@ -34,7 +34,7 @@ dependencies {
         app:layout_constraintTop_toTopOf="parent" />
 ```
 
-java代码中设置控件的属性,根据需要设置部分属性，不用全部设置
+java代码中设置控件的属性,根据需要设置部分属性，不用全部设置（从图片正中心，截取圆形图片）
 
 ```java
 //配置LoopViewPager参数
@@ -50,6 +50,8 @@ java代码中设置控件的属性,根据需要设置部分属性，不用全部
 
 ##### 效果：
  ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/1.png)
+ ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/2.png)
+
 
 #### 2.2 RoundImageView
 布局文件中添加RoundImageView控件：
@@ -80,6 +82,12 @@ java代码中设置控件的属性
 
 
  ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/3.png)
+ ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/4.png)
+
+
+ ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/5.png)
+ ![image](https://github.com/Eric3023/CircleImageView/blob/master/app/screenshoot/6.png)
+
  
 
 #### 2.3 PhotoPickerImageView
