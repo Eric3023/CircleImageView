@@ -11,6 +11,7 @@ import com.dong.circleimageview.widget.CircleImageView;
 import com.dong.circleimageview.widget.PhotoPickerImageView;
 import com.dong.circleimageviewdemo.R;
 import com.dong.circleimageviewdemo.model.UrlConfige;
+import com.tencent.bugly.crashreport.CrashReport;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCircleImageView.setOnClickListener(this);
         btnRoundImageView.setOnClickListener(this);
         btnPhotoPickerImageView.setOnClickListener(this);
+
+//        CrashReport.testJavaCrash();//Bugly异常上报测试
     }
 
     @Override
