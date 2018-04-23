@@ -6,5 +6,5 @@ package com.dong.circleimageviewdemo.model;
 
 public class UrlConfige {
 
-    public static final String IMG_URL = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522247170&di=354d306c244eb46328fe57dd6d6bf4fa&imgtype=jpg&er=1&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201212%2F14%2F20121214223133_jYzPn.jpeg";
+    public static final String IMG_URL = "http://h.hiphotos.baidu.com/image/pic/item/cdbf6c81800a19d88371d06a3ffa828ba61e466a.jpg";
 }

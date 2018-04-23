@@ -42,6 +42,7 @@ public class RoundImageView extends View {
     public static final int FIT_XY = 0;
     public static final int CENTER_INSIDE = 1;
     public static final int CENTER_CROP = 2;
+    private Target target;
 
     /*
      * 构造器
@@ -104,11 +105,12 @@ public class RoundImageView extends View {
     public RoundImageView setPath(String path) {
         this.path = path;
 
-        Picasso.get().load(path).into(new Target() {
+        target = new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 RoundImageView.this.bitmap = bitmap;
                 RoundImageView.this.invalidate();
+                target = null;
             }
 
             @Override
@@ -120,7 +122,8 @@ public class RoundImageView extends View {
             public void onPrepareLoad(Drawable placeHolderDrawable) {
 
             }
-        });
+        };
+        Picasso.get().load(path).into(target);
 
         return this;
     }

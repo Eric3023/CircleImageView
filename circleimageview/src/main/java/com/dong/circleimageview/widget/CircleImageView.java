@@ -41,6 +41,7 @@ public class CircleImageView extends View {
     private boolean isEdge;
     private int edgeColor;
     private int edgeWidth;
+    private Target target;
 
     public CircleImageView(Context context) {
         super(context);
@@ -135,11 +136,13 @@ public class CircleImageView extends View {
 //                }
 //            });
 //        } else {
-            Picasso.get().load(path).into(new Target() {
+
+            target = new Target() {
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    CircleImageView.this.bitmap = bitmap;
-                    CircleImageView.this.invalidate();
+                   CircleImageView.this.bitmap = bitmap;
+                   CircleImageView.this.invalidate();
+                   target = null;
                 }
 
                 @Override
@@ -151,7 +154,8 @@ public class CircleImageView extends View {
                 public void onPrepareLoad(Drawable placeHolderDrawable) {
 
                 }
-            });
+            };
+            Picasso.get().load(path).into(target);
 //        }
         return this;
     }

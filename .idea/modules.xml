@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CircleImageView.iml" filepath="$PROJECT_DIR$/.idea/CircleImageView.iml" />
       <module fileurl="file://$PROJECT_DIR$/CircleImageView.iml" filepath="$PROJECT_DIR$/CircleImageView.iml" />
       <module fileurl="file://C:\Users\Dong\Desktop\CircleImageView\CircleImageViewDemo.iml" filepath="C:\Users\Dong\Desktop\CircleImageView\CircleImageViewDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circleimageview/circleimageview.iml" filepath="$PROJECT_DIR$/circleimageview/circleimageview.iml" />
       <module fileurl="file://$PROJECT_DIR$/circleimageview/circleimageview.iml" filepath="$PROJECT_DIR$/circleimageview/circleimageview.iml" />
     </modules>
   </component>
